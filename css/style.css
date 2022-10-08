@@ -1,0 +1,51 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: "Consolas";
+}
+
+header{
+    display: flex;
+}
+
+nav{
+    background-color: grey;
+    height: 20px;
+    margin-top: 5px;
+}
+
+.logo{
+    align-self: left;
+    height: 75px;
+}
+
+.title{
+    text-align: center;
+    padding-left: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+.text{
+    flex-direction: column;
+}
+
+p{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+section{
+    background-color: rgba(15, 75, 75, 0.632);
+    border-radius: 20px;
+}
