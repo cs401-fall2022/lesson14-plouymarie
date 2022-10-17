@@ -11,12 +11,18 @@
   <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.1.css">
 </head>
 
-<body>
+<body id="func">
   <header>
     <img class="logo"  src="./img/TypeScript_logo.jpeg"> 
 		<h1 class="title">TypeScript 101</h1>
+    <button onclick="colorMode()" class="colorMode">Change Color Mode</button>
+      <script type="module">
+        import {colorMode} from '/build/ts/main.js'
+        window.colorMode = colorMode;
+      </script>
   </header>
-  <nav></nav>
+  
+    
   <div class="">
     <section>
       <h2>Intro</h2>

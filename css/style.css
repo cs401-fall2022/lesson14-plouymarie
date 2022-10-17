@@ -22,6 +22,20 @@ nav{
 .title{
     text-align: center;
     padding-left: 100px;
+    flex-basis: 75%;
+}
+
+.colorMode{
+    float: right;
+    text-align: center;
+    margin-left: auto;
+    margin-top: 30px;
+    padding-left: 10px;
+    height: 40px;
+    font-size: 17px;
+    background-color: rgba(15, 75, 75, 0.632);
+    color: white;
+    border-radius: 5px;
 }
 
 h1 {
@@ -30,6 +44,10 @@ h1 {
 
 h2 {
     text-align: center;
+}
+
+h3 {
+    text-align: right;
 }
 
 h4 {
