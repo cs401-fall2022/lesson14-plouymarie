@@ -3,7 +3,7 @@ function hello (): String {
     return "Hello World!";
 }
 
-function colorMode (){
+function colorMode(){
     if(document != null){
         let c = document.getElementById("func").style.backgroundColor;
         if(c === 'white'){

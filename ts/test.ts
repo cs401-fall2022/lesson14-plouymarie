@@ -4,6 +4,6 @@ import { hello } from './main';
 
 describe('sum module', () => {
     test('returns the string hello', () => {
-        expect(hello()).toBe('Hello World');
+        expect(hello()).toBe('Hello World!');
     });
 });
