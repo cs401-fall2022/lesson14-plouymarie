@@ -48,6 +48,7 @@ h1 {
 
 h2 {
     text-align: center;
+    text-decoration: underline;
 }
 
 h3 {
@@ -56,6 +57,12 @@ h3 {
 
 h4 {
     text-align: center;
+    font-size: larger;
+}
+h5 {
+    text-align: center;
+    font-size: large;
+    text-decoration: underline;
 }
 
 .text{
@@ -63,11 +70,31 @@ h4 {
 }
 
 p{
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 section{
     background-color: rgba(15, 75, 75, 0.632);
     border-radius: 20px;
+}
+
+a{
+    color:rgb(110, 20, 80);
+    font-weight: bold;
+    padding-left: 100px;
+}
+
+.code{
+    background-color:#1d1d1d ; 
+    color: #FFFFFF;
+    padding: 7px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+code{
+    padding: 2px;
+    color: #FFFFFF;
 }

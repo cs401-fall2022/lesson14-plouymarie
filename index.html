@@ -17,35 +17,144 @@
 		<h1 class="title">TypeScript 101</h1>
     <button onclick="colorMode()" class="colorMode">Change Color Mode</button>
       <script type="module">
-        import {colorMode} from '/build/main.js'
+        import {colorMode} from './build/main.js'
         window.colorMode = colorMode;
       </script>
   </header>
-  
-    
-  <div class="">
+
+  <div>
     <section>
       <h2>Intro</h2>
-      <p>This is a TypeScript tutorial </p>
+      <p>TypeScript is basically a layer on top of Javascript that enforces how types are assigned.
+        Below we will go over some of the basics of TypeScript.
+      </p>
     </section>
     <section>
       <h2>Types</h2>
       <h4>By Inference</h4>
-      <p>...</p>
+      <p>Typescript knows the Javascript language, therefore when declaring a variable, Typescript 
+        will generate the type for you.
+      </p>
+      <div class="code">
+        <code><span style="color: #7676e0">let </span><span style="color: #3bb176">helloWorld</span><span style="color: #ffffff"> = </span><span style="color: #A31515">"Hello World"</span></code>
+      </div>
+      <p>The above example infers helloWorld as a type string. <code style="background-color:black">let helloWorld : string</code></p>
       <h4>Defining</h4>
-      <p>...</p>
-      <h4>Composing</h4>
-      <p>...</p>
-      <h4>Structural Type System</h4>
-      <p>...</p>
+      <p>You can also define types when design patterns make it difficult for types to be inferred. 
+        <br>For example, to create an object, you can write:
+      </p>
+      <div class="code">
+        <code><span style="color: #7676e0">const </span><span style="color: #3b99b1">user</span><span style="color: #ffffff"> = {</span>
+          <span style="color: #3bb176"><br>&ensp; name</span><span style="color: #ffffff"> = </span><span style="color: #A31515">"Marie"</span><span style="color: #ffffff">; </span>
+          <span style="color: #3bb176"><br>&emsp; age</span><span style="color: #ffffff"> = </span><span style="color: #A31515">23</span><span style="color: #ffffff">; </span>
+          <span style="color: #ffffff"><br>}</span></code>
+      </div>
+      <p>
+        where name is inferred as <code style="background-color:black">name : string</code>, and age as <code style="background-color:black">age : number</code>
+      </p>
+      <p>To create this object's shape, you can use an interface declaration:</p>
+      <div class="code">
+        <code><span style="color: #7676e0">interface </span><span style="color: #3b99b1">user</span><span style="color: #ffffff"> = {</span>
+          <span style="color: #a2a2f7"><br>&ensp; name</span><span style="color: #ffffff"> = </span><span style="color: #3b99b1">string</span><span style="color: #ffffff">; </span>
+          <span style="color: #a2a2f7"><br>&emsp; age</span><span style="color: #ffffff"> = </span><span style="color: #3b99b1">number</span><span style="color: #ffffff">; </span>
+          <span style="color: #ffffff"><br>}</span>
+        </code>
+      </div>
+      <p>Since JavaScript supports classes and object-oriented programming, so does TypeScript. You can use an interface declaration with classes: </p>
+      <div class="code">
+        <code><span style="color: #7676e0">interface </span><span style="color: #3b99b1">user </span><span style="color: #ffffff">{</span>
+          <span style="color: #a2a2f7"><br>&ensp; name</span><span style="color: #ffffff"> : </span><span style="color: #3b99b1">string</span><span style="color: #ffffff">; </span>
+          <span style="color: #a2a2f7"><br>&emsp; age</span><span style="color: #ffffff"> : </span><span style="color: #3b99b1">number</span><span style="color: #ffffff">; </span>
+          <span style="color: #ffffff"><br>}</span>
+
+          <span style="color: #7676e0"><br><br>class </span><span style="color: #3b99b1">UserAccount </span><span style="color: #ffffff">{</span>
+          <span style="color: #a2a2f7"><br>&ensp; name</span><span style="color: #ffffff"> : </span><span style="color: #3b99b1">string</span><span style="color: #ffffff">;</span>
+          <span style="color: #a2a2f7"><br>&ensp; age</span><span style="color: #ffffff"> : </span><span style="color: #3b99b1">number</span><span style="color: #ffffff">;</span>
+          <span style="color: #7676e0"><br><br>&emsp; constructor</span><span style="color: #ffffff"> (</span>
+            <span style="color: #a2a2f7">name</span><span style="color: #ffffff"> : </span><span style="color: #3b99b1">string</span><span style="color: #ffffff">,</span>
+            <span style="color: #a2a2f7">age</span><span style="color: #ffffff"> : </span><span style="color: #3b99b1">number</span><span style="color: #ffffff">) {</span>
+          <span style="color: #7676e0"><br>&emsp;&emsp; this.name </span><span style="color: #ffffff">= </span><span style="color: #a2a2f7">name</span><span style="color: #ffffff">; </span>
+          <span style="color: #7676e0"><br>&emsp;&emsp; this.age </span><span style="color: #ffffff">= </span><span style="color: #a2a2f7">age</span></span><span style="color: #ffffff">; </span>
+          <span style="color: #ffffff"><br>&emsp; }</span>
+          <span style="color: #ffffff"><br>}</span>
+        </code>
+      </div>
+      <h4>Composing Types</h4>
+      <p>In TypeScript, we can create complex types by combining simple one. You can so so with Unions or Generics.</p>
+      <h5>Unions</h5>
+        <p>
+          With a union, you can declare that a type could be one of many types
+        </p>
+        <div class="code">
+          <code><span style="color: #7676e0">type </span><span style="color: #3b99b1">MyBool</span><span style="color: #ffffff"> = </span>
+            <span style="color: #3b99b1">true </span><span style="color: #ffffff"> | </span>
+            <span style="color: #3b99b1">false</span><span style="color: #ffffff">; </span>
+          </code>
+        </div>
+        <p>The above example describes a boolean type as being either true or false.
+          <br><br>Unions provide a way to handle different types as well:
+        </p>
+        <div class="code">
+          <code><span style="color: #7676e0">function </span><span style="color: #b1953b">getFunction</span><span style="color: #ffffff"> (</span>
+            <span style="color: #a2a2f7">obj</span><span style="color: #ffffff">: </span>
+            <span style="color: #3b99b1">string</span><span style="color: #ffffff"> | </span>
+            <span style="color: #3b99b1">string</span><span style="color: #ffffff">[]) { </span>
+            <span style="color: #ac522f"><br>&ensp; return </span><span style="color: #a2a2f7">obj.length</span><span style="color: #ffffff">; </span>
+            <span style="color: #ffffff"><br>}</span>
+          </code>
+        </div>
+      <h5>Generics</h5>
+        <p>Generics provide variables to types. A common example is an array. An array without generics could contain anything. 
+          An array with generics can describe the values that the array contains.
+        </p>
+        <div class="code">
+          <code><span style="color: #7676e0">type </span>
+            <span style="color: #3b99b1">StringArray</span><span style="color: #ffffff"> = </span>
+            <span style="color: #3b99b1">Array</span><span style="color: #ffffff"><</span>
+            <span style="color: #3b99b1">string</span><span style="color: #ffffff">>; </span>
+            <span style="color: #7676e0"><br>type </span>
+            <span style="color: #3b99b1">NumberArray</span><span style="color: #ffffff"> = </span>
+            <span style="color: #3b99b1">Array</span><span style="color: #ffffff"><</span>
+            <span style="color: #3b99b1">number</span><span style="color: #ffffff">>; </span>
+            <span style="color: #7676e0"><br>type </span>
+            <span style="color: #3b99b1">ObjectWithNameArray</span><span style="color: #ffffff"> = </span>
+            <span style="color: #3b99b1">Array</span><span style="color: #ffffff"><{</span>
+            <span style="color: #a2a2f7">name</span><span style="color: #ffffff">: </span>
+            <span style="color: #3b99b1">string</span><span style="color: #ffffff"> }>; </span>
+          </code>
+        </div>
+      <p></p>
     </section>
     <section>
       <h2>Functions</h2>
-      <p>...</p>
+      <p>Functions in Typescript are the basic building blocks. They can be declared in many different ways: </p>
+      <div class="code">
+        <code><span style="color: #7676e0">function </span><span style="color: #b1953b">helloWorld</span><span style="color: #ffffff"> (</span>
+          <span style="color: #a2a2f7">s</span><span style="color: #ffffff">: </span>
+          <span style="color: #3b99b1">string</span><span style="color: #ffffff"> ) =>  </span>
+          <span style="color: #3b99b1">void</span><span style="color: #ffffff">) { </span>
+          <span style="color: #b1953b"><br>&ensp; fn</span><span style="color: #ffffff">(</span><span style="color: #A31515">"Hello World"</span><span style="color: #ffffff">); </span>
+          <span style="color: #ffffff"><br>}</span>
+          <br><br>
+          <span style="color: #7676e0">function </span><span style="color: #b1953b">printToCL</span><span style="color: #ffffff"> (</span>
+          <span style="color: #a2a2f7">s</span><span style="color: #ffffff">: </span>
+          <span style="color: #3b99b1">string</span><span style="color: #ffffff"> ) {</span>
+          <span style="color: #b1953b"><br>&ensp; console.log</span><span style="color: #ffffff">(</span><span style="color: #a2a2f7">s</span><span style="color: #ffffff">); </span>
+          <span style="color: #ffffff"><br>}</span>
+          <br><br>
+          <span style="color: #b1953b">helloWorld</span><span style="color: #ffffff">(printToCL);</span>
+        </code>
+      </div>
+      <p></p>
     </section>
     <section>
-      <h2>Classes</h2>
-      <p>...</p>
+      <h2>For more information, here are a few links</h2>
+      <p><a href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html">TypeScript in 5 Minutes</a></p>
+      <p><a href="https://www.typescriptlang.org/docs/handbook/2/basic-types.html">TypeScript Basics</a></p>
+      <p><a href="https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html">Migrating from JavaScript</a></p>
+      <p><a href="https://www.typescriptlang.org/docs/handbook/intro-to-js-ts.html">JS Projects Utilizing Typescript</a></p>
+      <p><a href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html">TypeScript for Java/C# Programmers</a></p>
+      <p><a href="https://www.typescriptlang.org/docs/handbook/intro.html">Typescript Handbook</a></p>
     </section>
   </div>
 
