@@ -1,9 +1,9 @@
 {
-    "name": "hello_world",
+    "name": "typescript_101",
     "version": "1.0.0",
     "description": "hello world sample for typescript NodeJS",
     "main": "app.js",
-    "author": "Shane K. Panter",
+    "author": "Marie Plouy",
     "license": "MIT",
     "scripts": {
         "unit": "jest",
